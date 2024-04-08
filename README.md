@@ -1,3 +1,15 @@
+# AngularTest1
+
+A quick test of developing in Angular by implementing a simple version of Tictactoe.
+
+Using Typescript, HTML, and (S)CSS.
+
+
+## Screenshots
+
+![AngularTest1 GUI gif](angulartest1.gif)
+
+
 # TTT2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
