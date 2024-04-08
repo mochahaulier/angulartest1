@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.cdnfonts.com/css/moby');
+
+body {
+    --accent: #579BB1;
+    --accent-rgb: 87, 155, 177;
+    --shade1: #E1D7C6;
+    --shade1-rgb: 225, 215, 198;
+    --shade2: #ECE8DD;
+    --shade2-rgb: 236, 232, 221;
+    --background: #F8F4EA;
+} 
+
+body.dark-theme {
+    --background: #2D3250;
+    --shade1: #424769;
+    --shade1-rgb: 66, 71, 105;
+    --shade2: #7077A1;
+    --shade2-rgb: 112, 119, 161;
+    --accent: #F6B17A;
+    --accent-rgb: 246, 177, 122;
+}
+
+* {
+    font-family: 'Moby', sans-serif;  
+    box-sizing: border-box; 
+}
+
+body {    
+    background-color: var(--background);
+    color: var(--accent);  
+    box-sizing: border-box;
+    display: flex;              /* establish flex container */
+    flex-direction: column;     /* stack flex items vertically */
+    justify-content: center;    /* center items vertically */
+    align-items: center;        /* center items horizontally */
+    min-height: 100svh;
+    margin: 0;
+    padding: 0;
+}
+
+

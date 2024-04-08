@@ -1,0 +1,18 @@
+<main>
+    <div class="title">
+        <div style="display: inline-block;">TicTacToe<app-theme-select style="display: inline-block;"></app-theme-select>
+        </div>
+    </div>
+    <div class="board">
+        <app-board [(xNext)]="xNext" (hasWinner)="onGameOver($event)"></app-board>
+        <!-- <app-board [(xNext)]="xNext"></app-board> -->
+    </div>
+    <div class="info" [@scaleIt]="setGameState()">
+       <p>{{ gameState }}</p>
+    </div>
+    <div class="restart">
+        <div class="center">
+            <button class="empty square" (click)="onNewGame()" (touchend)="onNewGame()">{{ gameOver ? 'New Game' : 'Restart' }}</button>
+        </div>
+    </div>
+</main>

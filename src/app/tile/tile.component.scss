@@ -1,0 +1,141 @@
+@import '../../styles.scss';
+
+$bs: 5px;
+
+:root {
+    --bw: 10px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+button {
+    content: "";
+    position: relative;
+    border: none;
+    transition: color 0.2s, transform 0.2s, background-color 0.4s ease, border 0.2s, opacity 0.2s;
+    outline: none;    
+    width: 81%;
+    height: 81%;
+    margin: 0;
+    touch-action: none;
+}
+
+.square {
+    border-radius: 17px;    
+    &::after , &::before {
+        border-radius: 17px;                  
+    }
+}
+
+.circle {
+    border-radius: 50%;    
+    &::after, &::before {
+        border-radius: 50%;        
+    }
+}
+    
+.empty {
+    background-color: transparent;
+    color: var(--shade1);
+    
+    &:not(.set,.lock):active {
+      background-color: transparent;
+      box-shadow: none;
+      color: var(--accent);
+    }
+
+    &.set.lock:not(.loss) {
+        color: var(--accent);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;        
+        top: 0;
+        left: 0;
+        border: $bs dashed rgba(var(--shade1-rgb), 0.0);
+        // transition: opacity 0.2s , border 0.1s;
+    }
+
+    &.circle::before {
+        width: 100%;
+        height: 100%;
+    }
+
+    &.square::before {
+        left: 5%;
+        top: 5%;
+        width: 90%;
+        height: 90%;
+    }
+
+    &.set:not(.loss)::before {
+        border: $bs solid var(--accent);               
+    } 
+
+    &.set.loss::before {
+        border: $bs solid rgba(var(--shade1-rgb), 0.5);  
+    } 
+
+    &:not(.set,.lock):active::before {
+        opacity: 0;
+    }
+
+    //@media (hover: hover) {
+        &:not(.set,.lock):hover::before {        
+            border-color: rgba(var(--shade1-rgb), 0.5);
+            border-style: solid;        
+        }
+    
+
+        &:not(.set,.lock):focus::before {        
+            border-color: rgba(var(--shade1-rgb), 0.5);
+            border-style: solid;
+        }
+    //}
+
+    &.circle::after {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.square::after {
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+    }
+    
+    &:not(.set):after {
+      content: "";
+      position: absolute;
+      background-color: transparent;
+      border: $bs solid var(--accent);
+      opacity: 0;
+      z-index: 1;
+      transform: scale(1.6);
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    
+    &:not(.set,.lock):active::after {
+      opacity: 1;
+      transform: scaleX(1);      
+    }
+  }
+
+
+
+
+

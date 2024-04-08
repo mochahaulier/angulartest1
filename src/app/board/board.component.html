@@ -1,0 +1,9 @@
+<main>
+    <app-tile *ngFor="let num of tiles; let i = index; trackBy: trackByFn"
+        [value]="num"
+        [player]="xNext"
+        [isActive]="isActive"
+        [isWin]="win.includes(i)"        
+        (onClickity)="setTile(i)">
+    </app-tile>
+</main>

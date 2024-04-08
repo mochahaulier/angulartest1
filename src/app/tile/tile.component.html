@@ -1,0 +1,14 @@
+<main>
+    <button
+        [ngClass]="(value === 'X') 
+        ? ({'empty square set': true, 'loss': (!isWin && !isActive), 'lock': !isActive}) 
+        : (value === 'O') ? ({'empty circle set': true, 'loss': (!isWin && !isActive), 'lock': !isActive}) 
+        : (player)
+            ? {'empty square': true, 'lock': !isActive} 
+            : {'empty circle': true, 'lock': !isActive}"
+        [tabindex]="(!value) ? 0 : -1"
+        [disabled]="(isActive) ? false : true"
+        (mouseup)="onClickity.emit(true)"
+        (touchend)="onClickity.emit(true)">{{value ? value : '#'}}
+    </button>
+</main>
